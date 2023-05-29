@@ -1,0 +1,18 @@
+<p>Obteniendo una imagen de gato desde la Api "The Cat API"</p>
+<div class="row filaGato">
+<div class="col-sm-3" *ngFor="let gato of arrGatos; let i=index">
+
+    <div class="card" style="width: 10rem;" *ngIf="true">
+        <img [src]="gato.url" [width]="gato.width" [height]="gato.height">
+        <div class="card-body">
+          <h5 class="card-title">{{gato.id}}</h5>
+          <p class="card-text">Propiedades</p>
+          <p class="card-text">Width: {{gato.width}}</p>
+          <p class="card-text">Url: {{gato.url}}</p>
+
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+</div>
+<button (click)="cambiarGato()">Cambiar Gato</button>
