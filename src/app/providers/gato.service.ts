@@ -21,9 +21,11 @@ export class GatoService {
   consumirGatos() {
     this.httpClient.get('https://api.thecatapi.com/v1/images/search?limit=10').subscribe((data) => {
     Array(data).forEach((gato: any) => {
-      console.log(gato);
+      //console.log(gato);
       gato.forEach((cat:any) => {
-        this.gatos.push(cat);
+        let g = new Gato(cat.id, cat.url, cat.width, cat.height);
+        //console.log(g);
+        this.gatos.push(g);
       });
     }); 
     });

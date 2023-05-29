@@ -2,13 +2,14 @@
 <div class="row filaGato">
 <div class="col-sm-3" *ngFor="let gato of arrGatos; let i=index">
 
-    <div class="card" style="width: 10rem;" *ngIf="true">
-        <img [src]="gato.url" [width]="gato.width" [height]="gato.height">
+    <div class="card cardGato"  *ngIf="true">
+        <img class="imgGato"  [src]="gato.url" >
         <div class="card-body">
           <h5 class="card-title">{{gato.id}}</h5>
           <p class="card-text">Propiedades</p>
           <p class="card-text">Width: {{gato.width}}</p>
           <p class="card-text">Url: {{gato.url}}</p>
+          <p class="card-text">visible: {{gato.visible}}</p>
 
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
