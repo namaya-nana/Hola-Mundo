@@ -22,8 +22,11 @@ export class ComponenteDosComponent implements OnInit {
     ,250, 250);
 
      this.arrGatos = this.gatoServ.getGato(); 
+    setTimeout(()=>{
+      this.mostrarGatos(4,7);
+    },2000);
 
-    console.log(this.gatoServ.getGato());
+    console.log(this.arrGatos);
     
    }
 
@@ -31,16 +34,20 @@ export class ComponenteDosComponent implements OnInit {
   
   }
 
-  mostrarGatos(){
-    let i = 0;
+  mostrarGatos(i:number, max:number){
+    //let i = 0;
+    console.log(i);
     this.arrGatos.forEach((gato)=>{
-      if(i>3){
+      console.log(i);
+      if(i<= max){
+        gato.visible=true;
+      }else{
         gato.visible=false;
       }
-      console.log(i);
       i++;
-    })
+    });
   }
+
   cambiarGato(){
     this.gato.url = this.gato.url + 1;
   }
