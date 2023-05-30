@@ -31,6 +31,16 @@ export class ComponenteDosComponent implements OnInit {
   
   }
 
+  mostrarGatos(){
+    let i = 0;
+    this.arrGatos.forEach((gato)=>{
+      if(i>3){
+        gato.visible=false;
+      }
+      console.log(i);
+      i++;
+    })
+  }
   cambiarGato(){
     this.gato.url = this.gato.url + 1;
   }
